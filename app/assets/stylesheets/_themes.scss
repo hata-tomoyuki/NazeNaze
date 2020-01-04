@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.header{
+  width: 100vw;
+  height: 100px;
+  background-color: #444;
+  display: flex;
+  justify-content: space-between;
+  &__title{
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    line-height: 100px;
+    margin-left: 15px;
+    a{
+      text-decoration: none;
+      color: #ff8;
+    }
+  }
+  &__menu{
+    display: flex;
+    justify-content: flex-end;
+    &__user{
+      border-radius: 4px;
+      height: 40px;
+      margin: auto 10px;
+      background-color: #ffe;
+    }
+    &__create{
+      border-radius: 4px;
+      height: 40px;
+      margin: auto 10px;
+      background-color: #ffe;
+      a{
+        text-decoration: none;
+        color: black;
+      }
+    }
+    p{
+      line-height: 40px;
+      margin: 0 5px 0 5px;
+      font-size: 20px;
+    }
+  }
+}
+
+.main{
+  background-color: #ddd;
+  height: calc(100vh - 100px);
+  width: 100vw;
+  overflow: scroll;
+  &__themes{
+    background-color: #eee;
+    height: 100vh;
+    margin: 0 70px;
+    overflow: scroll;
+    &__char{
+      padding: 20px 0 0 20px;
+      p{
+        font-size: 24px;
+        color: #333
+      }
+    }
+    &__theme{
+      width: 70%;
+      border: 1px solid #333;
+      margin: 30px auto 50px;
+      padding-bottom: 20px;
+      padding-top: 20px;
+      border-radius: 10px;
+      color: #333;
+      background-color: #fef;
+      display: flex;
+      justify-content: space-between;
+      &__left_content{
+        width: 70%;
+        padding-left: 10px;
+        p.title{
+          width: 100%;
+          font-weight: bold;
+          font-size: 20px;
+          word-wrap: break-word;
+        }
+        p.count{
+          display: inline-block;
+          padding-right: 5px;
+        }
+      }
+      &__right_content{
+        width: 30%;
+        font-size: 12px;
+        margin-right: 10px;
+        text-align: right;
+      }
+    }
+  }
+  .form{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 70px;
+    background-color: #444;
+    position: fixed;
+    bottom: 0;
+    margin: auto;
+    &__theme{
+      height: 60%;
+      padding-top: 20px;
+      position: relative;
+      width: 100%;
+      #text{
+      width: 100%;
+      height: 50px;
+      margin-bottom: 10px;
+      }
+      // .icon{
+      //   position: absolute;
+      //   top: 40px;
+      //   right: 20px;
+      // }
+    }
+  }
+  
+  .button {
+    height: 50px;
+    display: inline-block;
+    border-radius: 5%;
+    text-align: center;
+    cursor: pointer;
+    padding: 12px 12px;
+    background-color: #fcf;
+    line-height: 1em;
+    border: 2px solid #000066;
+    margin-top: 20px;
+    margin-left: 20px
+  }
+  .button:hover {
+    background: #ffffff;
+  }
+}
+
+

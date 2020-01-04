@@ -1,0 +1,33 @@
+.header
+  .header__title
+    = link_to root_path do
+      ??NazeNaze??
+  .header__menu
+    .header__menu__user
+      %p Tomoyuki
+    .header__menu__create
+      %p 新規作成
+
+.main
+  .main__themes
+    .main__themes__char
+      %p -- テーマ一覧 --
+    - @themes.each do |theme|
+      .main__themes__theme
+        .main__themes__theme__left_content
+          %p.title
+            = theme.title
+          %p.count
+            aaaaaaaaaaaaaaaaa
+        .main__themes__theme__right_content
+          %p.title
+            = theme.created_at
+
+  .form
+    .form__theme
+      %input#text{:placeholder => " Enter theme", :type => "text"}/
+    %input.button{:type => "submit", :value => "GO"}/
+
+
+
+
