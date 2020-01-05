@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root "themes#index"
-  resources :posts, only: [:index, :show]
+  resources :themes, only: [:index, :create]
 end

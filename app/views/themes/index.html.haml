@@ -24,10 +24,10 @@
             = theme.created_at
 
   .form
-    .form__theme
-      %input#text{:placeholder => " Enter theme", :type => "text"}/
-    %input.button{:type => "submit", :value => "GO"}/
-
+    = form_for @theme do |f|
+      .form__theme
+        = f.text_field :title, class: 'text', placeholder: ' Enter theme'
+        = f.submit 'Go', class: 'button'
 
 
 
