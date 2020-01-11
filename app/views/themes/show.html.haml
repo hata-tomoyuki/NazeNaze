@@ -1,0 +1,45 @@
+.header
+  .header__title
+    = link_to root_path do
+      ??NazeNaze??
+  .header__menu
+    - if user_signed_in?
+      -# .header__menu__user
+      -#   = link_to new_post_path do
+      -#     新規投稿
+      .header__menu__create
+        = link_to destroy_user_session_path, method: :delete do
+          ログアウト
+    - else
+      .header__menu__user
+        = link_to new_user_session_path do
+          ログイン
+      .header__menu__create
+        = link_to new_user_registration_path do
+          新規登録
+
+.main
+  .main__posts
+    .main__posts__char
+      %p.title
+        = @theme.title
+      - @posts.each do |post|
+        .main__posts__post
+          .main__posts__post__left_content
+            %p.title
+              = post.text
+          .main__posts__post__right_content
+            %p.date
+              = post.created_at
+            .main__posts__post__right_content__delete
+              = link_to theme_post_path(post.id), method: :delete do
+                %i.fas.fa-trash
+            
+         
+            
+
+  .form
+    = form_for [@theme, @post] do |f|
+      .form__theme
+        = f.text_field :text, class: 'text', placeholder: ' Post idea'
+        = f.submit 'Go', class: 'button'

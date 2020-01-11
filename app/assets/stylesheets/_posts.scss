@@ -1,73 +1,9 @@
-* {
-  box-sizing: border-box;
-}
-
-
-.header{
-  width: 100vw;
-  height: 100px;
-  background-color: #444;
-  display: flex;
-  justify-content: space-between;
-  &__title{
-    font-weight: bold;
-    font-size: 30px;
-    text-align: center;
-    line-height: 100px;
-    margin-left: 15px;
-    a{
-      text-decoration: none;
-      color: #ff8;
-    }
-  }
-  &__menu{
-    display: flex;
-    justify-content: flex-end;
-    &__user{
-      border-radius: 4px;
-      height: 40px;
-      margin: auto 10px;
-      background-color: #ffe;
-      a{
-        text-decoration: none;
-        color: black;
-        display: block;
-        padding: 8px 10px 0;
-      }
-    }
-    &__create{
-      border-radius: 4px;
-      height: 40px;
-      margin: auto 10px;
-      background-color: #ffe;
-      a{
-        text-decoration: none;
-        color: black;
-        display: block;
-        padding: 8px 10px 0;
-      }
-    }
-    &__nickname{
-      border-radius: 4px;
-      height: 40px;
-      margin: auto 10px;
-      background-color: #ffe;
-      padding: 8px 10px 0;
-    }
-    p{
-      line-height: 40px;
-      margin: 0 5px 0 5px;
-      font-size: 20px;
-    }
-  }
-}
-
 .main{
   background-color: #ddd;
   height: calc(100vh - 100px);
   width: 100vw;
   overflow: scroll;
-  &__themes{
+  &__posts{
     background-color: #eee;
     height: 100vh;
     margin: 0 70px;
@@ -75,12 +11,12 @@
     padding-bottom: 100px;  
     &__char{
       padding: 20px 0 0 20px;
-      p{
+      p.title{
         font-size: 24px;
         color: #333
       }
     }
-    &__theme{
+    &__post{
       width: 70%;
       border: 1px solid #333;
       margin: 30px auto 50px;
@@ -88,7 +24,7 @@
       padding-top: 20px;
       border-radius: 10px;
       color: #333;
-      background-color: #fef;
+      background-color: #B1F9D0;
       display: flex;
       justify-content: space-between;
       &__left_content{
@@ -96,7 +32,6 @@
         padding-left: 10px;
         p.title{
           width: 100%;
-          font-weight: bold;
           font-size: 20px;
           word-wrap: break-word;
         }
@@ -104,9 +39,8 @@
           text-decoration: none;
           color: #000;
         }
-        p.count{
-          display: inline-block;
-          padding-right: 5px;
+        p.date{
+          font-size: 10px;
         }
       }
       &__right_content{
@@ -114,22 +48,12 @@
         font-size: 12px;
         margin-right: 10px;
         text-align: right;
-        &__icons{
-          display: flex;
-          justify-content: flex-end;
-          margin-right: 5px;
-          margin-top: 10px;
+        &__delete{
           font-size: 20px;
-          &__delete{
-            margin-left: 10px;
-            a{
-              color: #444;
-            }
-          }
-          &__edit{
-            a{
-              color: #444;
-            }
+          margin: 10px 5px 0 0;
+          color: #000;
+          a{
+            color: #444;
           }
         }
       }
@@ -160,7 +84,6 @@
       // }
     }
   }
-  
   .button {
     height: 50px;
     display: inline-block;
@@ -168,7 +91,7 @@
     text-align: center;
     cursor: pointer;
     padding: 12px 12px;
-    background-color: #fcf;
+    background-color: #B1F9D0;
     line-height: 1em;
     border: 2px solid #000066;
     margin-bottom: 20px;
