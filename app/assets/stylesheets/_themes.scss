@@ -77,6 +77,7 @@
         &--count{
           padding-right: 5px;
           margin-top: 10px;
+          font-size: 20px;
         }
       }
       &__right_content{
@@ -84,6 +85,9 @@
         font-size: 12px;
         margin-right: 10px;
         text-align: right;
+        .date{
+          font-size: 16px;
+        }
         &__icons{
           display: flex;
           justify-content: flex-end;
@@ -120,12 +124,13 @@
   
   .button {
     height: 50px;
+    width: 80px;
     display: inline-block;
-    border-radius: 5%;
+    border-radius: 5px;
     text-align: center;
     cursor: pointer;
     padding: 12px 12px;
-    background-color: #fcf;
+    background-color: #ff8;
     line-height: 1em;
     border: 2px solid #000066;
     margin-bottom: 20px;

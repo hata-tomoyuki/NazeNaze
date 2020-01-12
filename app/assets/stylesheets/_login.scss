@@ -1,27 +1,70 @@
 .main__background{
   background-color: #eee;
-    height: 100vh;
-    margin: 0 70px;
-    overflow: scroll;
-    padding-bottom: 100px;
+  height: 100vh;
+  margin: 0 70px;
+  overflow: scroll;
+  padding-bottom: 100px;
+  color: #444;
+  &__box{
+    width: 80%;
+    margin: 0 auto;
     h2 {
       font-weight: bold;
       font-size: 30px;
       margin: 30px 0 30px 0;
+      text-align: center;
     }
-  
-    label{
+    .new_user{
+      margin: 0 auto;
+      text-align: center;
+    }
+    .field{
       font-size: 24px;
+      margin-top: 30px;
     }
-  
+    .field-input{
+      margin-top: 5px;
+      .text{
+        height: 35px;
+        width: 50%;
+      }
+    }
+    input#user-email{
+      width: 30%;
+    }
     .actions{
       font-size: 20px;
-      input{
-        cursor: pointer
+      .btn{
+        cursor: pointer;
+        height: 50px;
+        background-color: #ffb;
+        border: 1px solid black;
+        display: inline-block;
+        line-height: 50px;
+        text-align: center;
+        padding: 0 30px;
+        border-radius: 5px;
+        margin-top: 20px;
       }
     } 
     .field_checkbox label{
       font-size: 14px;
     }
-    
+  }
+
+  .links{
+    text-align: center;
+    width: 25%;
+    margin: 50px auto 0;
+    .link{
+      text-decoration: none;
+      color: #666;
+      cursor: pointer;
+      display: block;
+      background-color: #fef;
+      border-radius: 5px;
+      padding: 5px 20px;
+      margin-top: 20px;
+    }
+  }   
 }

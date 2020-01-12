@@ -1,7 +1,5 @@
 .header
-  .header__title
-    = link_to root_path, class: "header__title--btn" do
-      ??NazeNaze??
+  = render "themes/header"
   .header__menu
     - if user_signed_in?
       .header__menu__btn
@@ -21,22 +19,23 @@
   .main__background
     .main__background__char
       テーマ一覧
-    - @themes.each do |theme|
-      .main__background__theme
-        .main__background__theme__left_content
-          = link_to theme_path(theme.id), class: "main__background__theme__left_content--title" do
-            = theme.title
-          .main__background__theme__left_content--count
-            なぜなぜカウント：
-            = theme.posts.length
-        .main__background__theme__right_content
-          %p.title
-            = theme.created_at.to_s(:datetime)
-          .main__background__theme__right_content__icons
-            = link_to theme_path(theme.id), class: "main__background__theme__right_content__icons--icon", method: :delete do
-              %i.fas.fa-cog
-            = link_to theme_path(theme.id), class: "main__background__theme__right_content__icons--icon", method: :delete do
-              %i.fas.fa-trash
+      - @themes.each do |theme|
+        - if user_signed_in? && current_user.id == theme.user_id
+          .main__background__theme
+            .main__background__theme__left_content
+              = link_to theme_path(theme.id), class: "main__background__theme__left_content--title" do
+                = theme.title
+              .main__background__theme__left_content--count
+                なぜなぜカウント：
+                = theme.posts.length
+            .main__background__theme__right_content
+              %p.date
+                = theme.created_at.to_s(:datetime)
+              .main__background__theme__right_content__icons
+                = link_to theme_path(theme.id), class: "main__background__theme__right_content__icons--icon", method: :delete do
+                  %i.fas.fa-cog
+                = link_to theme_path(theme.id), class: "main__background__theme__right_content__icons--icon", method: :delete do
+                  %i.fas.fa-trash 
 
 
   .form

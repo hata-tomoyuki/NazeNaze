@@ -1,7 +1,5 @@
 .header
-  .header__title
-    = link_to root_path, class: "header__title--btn" do
-      ??NazeNaze??
+  = render "themes/header"
   .header__menu
     - if user_signed_in?
       .header__menu__btn

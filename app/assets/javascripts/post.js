@@ -10,8 +10,9 @@ $(function() {
                     <p class="date">
                      ${post.date}
                     </p>
-                    <div class="main__background__post__right_content__delete">
-                      <a rel="nofollow" data-method="delete" href="/themes/31/posts/15"><i class="fas fa-trash"></i></a>
+                    <a class="main__background__post__right_content__icon" rel="nofollow" data-method="delete" href="/themes/58/posts/17">
+                      <i class="fas fa-trash"></i>
+                    </a>
                     </div>
                   </div>
                 </div>`
@@ -32,13 +33,14 @@ $(function() {
     .done(function(post){
       console.log(post);
       var html = buildHTML(post);
-      $('.main__posts').append(html);
+      $('.main__background').append(html);
       // $('.main__posts').animate({ scrollTop: $('main__posts')[0].scrollHeight});
       $('#post_text').val('');
       $('input').prop('disabled', false);
     })
     .fail(function(){
-      alert('error');
+      alert('メッセージを入力してください');
+      $('input').prop('disabled', false);
     })
   })
 })

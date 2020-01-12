@@ -1,7 +1,7 @@
 class ThemesController < ApplicationController
   def index
     @theme = Theme.new
-    @themes = Theme.all
+    @themes = Theme.includes(:user)
   end
 
   def create
