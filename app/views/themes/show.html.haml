@@ -20,15 +20,7 @@
     .main__background__char
       = @theme.title
     - @posts.each do |post|
-      .main__background__post
-        .main__background__post__left_content
-          %p.title
-            = post.text
-        .main__background__post__right_content
-          %p.date
-            = post.created_at.to_s(:datetime)
-          = link_to theme_post_path(post.id), class: "main__background__post__right_content__icon", method: :delete do
-            %i.fas.fa-trash
+      = render partial: 'posts/post', locals: { post: post }
 
   .form
     = form_for [@theme, @post] do |f|
