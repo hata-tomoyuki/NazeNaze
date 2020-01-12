@@ -1,42 +1,36 @@
 .header
   .header__title
-    = link_to root_path do
+    = link_to root_path, class: "header__title--btn" do
       ??NazeNaze??
   .header__menu
     - if user_signed_in?
-      -# .header__menu__user
-      -#   = link_to new_post_path do
-      -#     新規投稿
-      .header__menu__create
-        = link_to destroy_user_session_path, method: :delete do
+      .header__menu__btn
+        = current_user.nickname
+      .header__menu__btn
+        = link_to destroy_user_session_path, class: "header__menu__btn--link", method: :delete do
           ログアウト
     - else
-      .header__menu__user
-        = link_to new_user_session_path do
+      .header__menu__btn
+        = link_to new_user_session_path, class: "header__menu__btn--link" do
           ログイン
-      .header__menu__create
-        = link_to new_user_registration_path do
+      .header__menu__btn
+        = link_to new_user_registration_path, class: "header__menu__btn--link" do
           新規登録
 
 .main
-  .main__posts
-    .main__posts__char
-      %p.title
-        = @theme.title
-      - @posts.each do |post|
-        .main__posts__post
-          .main__posts__post__left_content
-            %p.title
-              = post.text
-          .main__posts__post__right_content
-            %p.date
-              = post.created_at
-            .main__posts__post__right_content__delete
-              = link_to theme_post_path(post.id), method: :delete do
-                %i.fas.fa-trash
-            
-         
-            
+  .main__background
+    .main__background__char
+      = @theme.title
+    - @posts.each do |post|
+      .main__background__post
+        .main__background__post__left_content
+          %p.title
+            = post.text
+        .main__background__post__right_content
+          %p.date
+            = post.created_at.to_s(:datetime)
+          = link_to theme_post_path(post.id), class: "main__background__post__right_content__icon", method: :delete do
+            %i.fas.fa-trash
 
   .form
     = form_for [@theme, @post] do |f|
