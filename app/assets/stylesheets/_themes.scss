@@ -15,7 +15,7 @@
     text-align: center;
     line-height: 100px;
     margin-left: 15px;
-    a{
+    &--btn{
       text-decoration: none;
       color: #ff8;
     }
@@ -23,41 +23,17 @@
   &__menu{
     display: flex;
     justify-content: flex-end;
-    &__user{
-      border-radius: 4px;
-      height: 40px;
-      margin: auto 10px;
-      background-color: #ffe;
-      a{
-        text-decoration: none;
-        color: black;
-        display: block;
-        padding: 8px 10px 0;
-      }
-    }
-    &__create{
-      border-radius: 4px;
-      height: 40px;
-      margin: auto 10px;
-      background-color: #ffe;
-      a{
-        text-decoration: none;
-        color: black;
-        display: block;
-        padding: 8px 10px 0;
-      }
-    }
-    &__nickname{
+    &__btn{
       border-radius: 4px;
       height: 40px;
       margin: auto 10px;
       background-color: #ffe;
       padding: 8px 10px 0;
-    }
-    p{
-      line-height: 40px;
-      margin: 0 5px 0 5px;
-      font-size: 20px;
+      &--link{
+        text-decoration: none;
+        color: black;
+        display: block;
+      }
     }
   }
 }
@@ -67,7 +43,7 @@
   height: calc(100vh - 100px);
   width: 100vw;
   overflow: scroll;
-  &__themes{
+  &__background{
     background-color: #eee;
     height: 100vh;
     margin: 0 70px;
@@ -75,10 +51,6 @@
     padding-bottom: 100px;  
     &__char{
       padding: 20px 0 0 20px;
-      p{
-        font-size: 24px;
-        color: #333
-      }
     }
     &__theme{
       width: 70%;
@@ -94,19 +66,17 @@
       &__left_content{
         width: 70%;
         padding-left: 10px;
-        p.title{
+        &--title{
           width: 100%;
           font-weight: bold;
-          font-size: 20px;
+          font-size: 24px;
           word-wrap: break-word;
-        }
-        a{
           text-decoration: none;
           color: #000;
         }
-        p.count{
-          display: inline-block;
+        &--count{
           padding-right: 5px;
+          margin-top: 10px;
         }
       }
       &__right_content{
@@ -117,19 +87,11 @@
         &__icons{
           display: flex;
           justify-content: flex-end;
-          margin-right: 5px;
           margin-top: 10px;
           font-size: 20px;
-          &__delete{
-            margin-left: 10px;
-            a{
-              color: #444;
-            }
-          }
-          &__edit{
-            a{
-              color: #444;
-            }
+          &--icon{
+            color: #444;
+            margin-right: 10px;
           }
         }
       }
@@ -153,11 +115,6 @@
       height: 50px;
       margin-bottom: 10px;
       }
-      // .icon{
-      //   position: absolute;
-      //   top: 40px;
-      //   right: 20px;
-      // }
     }
   }
   

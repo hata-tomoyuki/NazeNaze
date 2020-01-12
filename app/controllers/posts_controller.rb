@@ -1,8 +1,13 @@
 class PostsController < ApplicationController
 
   def create
-    post = Post.create(post_params)
-    redirect_to "/themes/#{post.theme.id}"
+    @post = Post.create(post_params)
+    if @post.save
+      respond_to do |format|
+        format.html { redirect_to theme_path(params[:theme_id]), notice: "メッセージを送信しました" }
+        format.json
+      end
+    end
   end
 
   def destroy

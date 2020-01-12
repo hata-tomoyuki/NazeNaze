@@ -3,7 +3,7 @@
   height: calc(100vh - 100px);
   width: 100vw;
   overflow: scroll;
-  &__posts{
+  &__background{
     background-color: #eee;
     height: 100vh;
     margin: 0 70px;
@@ -11,10 +11,8 @@
     padding-bottom: 100px;  
     &__char{
       padding: 20px 0 0 20px;
-      p.title{
-        font-size: 24px;
-        color: #333
-      }
+      font-size: 24px;
+      color: #333
     }
     &__post{
       width: 70%;
@@ -30,16 +28,12 @@
       &__left_content{
         width: 70%;
         padding-left: 10px;
-        p.title{
+        .title{
           width: 100%;
           font-size: 20px;
           word-wrap: break-word;
         }
-        a{
-          text-decoration: none;
-          color: #000;
-        }
-        p.date{
+        .date{
           font-size: 10px;
         }
       }
@@ -48,13 +42,10 @@
         font-size: 12px;
         margin-right: 10px;
         text-align: right;
-        &__delete{
+        &__icon{
           font-size: 20px;
           margin: 10px 5px 0 0;
-          color: #000;
-          a{
-            color: #444;
-          }
+          color: #444;
         }
       }
     }
@@ -77,11 +68,6 @@
       height: 50px;
       margin-bottom: 10px;
       }
-      // .icon{
-      //   position: absolute;
-      //   top: 40px;
-      //   right: 20px;
-      // }
     }
   }
   .button {
