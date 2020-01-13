@@ -1,0 +1,4 @@
+= form_for [theme, post], remote: true do |f|
+  .form__theme
+    = f.text_field :text, class: 'text', placeholder: ' Post idea'
+    = f.submit 'Go', class: 'button'

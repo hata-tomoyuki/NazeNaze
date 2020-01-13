@@ -1,0 +1,2 @@
+$('.main__background').html("<%= escape_javascript(render 'post', post: @post) %>");
+$('.form').html("<%= escape_javascript(render 'form',  { theme: @theme, post: @post }); %>

@@ -17,13 +17,7 @@
 
 .main
   .main__background
-    .main__background__char
-      = @theme.title
-    - @posts.each do |post|
-      = render partial: 'posts/post', locals: { post: post }
+    = render partial: 'posts/post', locals: { post: @post }
 
   .form
-    = form_for [@theme, @post] do |f|
-      .form__theme
-        = f.text_field :text, class: 'text', placeholder: ' Post idea'
-        = f.submit 'Go', class: 'button'
+    = render partial: 'posts/form', locals: { theme: @theme, post: @post }
