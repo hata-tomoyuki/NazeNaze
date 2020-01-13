@@ -1,7 +1,7 @@
 class ThemesController < ApplicationController
   def index
     @theme = Theme.new
-    @themes = Theme.includes(:user)
+    @themes = Theme.includes(:user).order("created_at DESC")
   end
 
   def create
@@ -18,6 +18,16 @@ class ThemesController < ApplicationController
   def destroy
     theme = Theme.find(params[:id])
     theme.destroy
+    redirect_to root_path
+  end
+
+  def edit
+    @theme = Theme.find(params[:id])
+  end
+
+  def update
+    theme = Theme.find(params[:id])
+    theme.update(theme_params)
     redirect_to root_path
   end
 

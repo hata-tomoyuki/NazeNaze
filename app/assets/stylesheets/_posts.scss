@@ -2,12 +2,12 @@
   background-color: #ddd;
   height: calc(100vh - 100px);
   width: 100vw;
-  overflow: scroll;
+  // overflow: scroll;
   &__background{
     background-color: #eee;
     height: 100vh;
     margin: 0 70px;
-    overflow: scroll;
+    // overflow: scroll;
     padding-bottom: 100px;  
     &__char{
       padding: 20px 0 0 20px;
@@ -50,24 +50,24 @@
       }
     }
   }
-  .form{
+}
+.form{
+  width: 100%;
+  padding: 0 70px;
+  background-color: #444;
+  position: fixed;
+  bottom: 0;
+  margin: auto;
+  &__theme{
+    display: flex;
+    height: 60%;
+    padding-top: 20px;
+    position: relative;
     width: 100%;
-    padding: 0 70px;
-    background-color: #444;
-    position: fixed;
-    bottom: 0;
-    margin: auto;
-    &__theme{
-      display: flex;
-      height: 60%;
-      padding-top: 20px;
-      position: relative;
-      width: 100%;
-      .text{
-      width: 100%;
-      height: 50px;
-      margin-bottom: 10px;
-      }
+    .text{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
     }
   }
 }

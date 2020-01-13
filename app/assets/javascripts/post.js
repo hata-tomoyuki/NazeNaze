@@ -10,7 +10,7 @@ $(function() {
                     <p class="date">
                      ${post.date}
                     </p>
-                    <a class="main__background__post__right_content__icon" rel="nofollow" data-method="delete" href="/themes/${post.theme_id}">
+                    <a class="main__background__post__right_content__icon" rel="nofollow" data-method="delete" href="/themes/${post.id}/posts/${post.theme_id}">
                       <i class="fas fa-trash"></i>
                     </a>
                     </div>
@@ -43,4 +43,4 @@ $(function() {
       $('input').prop('disabled', false);
     })
   })
-})
+});
