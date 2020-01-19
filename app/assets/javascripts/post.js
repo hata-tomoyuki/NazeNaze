@@ -34,7 +34,7 @@ $(function() {
       console.log(post);
       var html = buildHTML(post);
       $('.main__background').append(html);
-      // $('.main__posts').animate({ scrollTop: $('main__posts')[0].scrollHeight});
+      $('.main__background').animate({ scrollTop: $('.main__background')[0].scrollHeight});
       $('#post_text').val('');
       $('input').prop('disabled', false);
     })

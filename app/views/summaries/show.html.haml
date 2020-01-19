@@ -1,0 +1,50 @@
+.header
+  = render "themes/header"
+  .header__menu
+    - if user_signed_in?
+      .header__menu__btn
+        = current_user.nickname
+      .header__menu__btn
+        = link_to destroy_user_session_path, class: "header__menu__btn--link", method: :delete do
+          ログアウト
+    - else
+      .header__menu__btn
+        = link_to new_user_session_path, class: "header__menu__btn--link" do
+          ログイン
+      .header__menu__btn
+        = link_to new_user_registration_path, class: "header__menu__btn--link" do
+          新規登録
+
+.main
+  .main__background
+    .main__background__formats
+      .main__background__formats__title
+        = @theme.title
+    - if @summary
+      .main__background__formats__summary
+        = @summary.text
+      .main__background__formats__btns
+        = link_to edit_theme_summary_path(@theme.id), class: "main__background__formats__btns--btn" do
+          編集
+        = link_to theme_summary_path(@theme.id), class: "main__background__formats__btns--btn", method: :delete do
+          削除
+        = link_to theme_path(@theme.id), class: "main__background__formats__btns--return" do
+          戻る
+    - else
+      - if @post.empty?
+        .main__background__formats__message
+          メモの投稿がありません！
+          %br/
+          %br/
+          メモを投稿しましょう！
+        .main__background__formats__btns
+          = link_to theme_path(@theme.id), class: "main__background__formats__btns--return" do
+            戻る
+      - else
+        .main__background__formats__message
+          メモをまとめて言語化しましょう！
+        .main__background__formats__btns
+          = link_to new_theme_summary_path(@theme.id), class: "main__background__formats__btns--btn" do
+            作成
+          = link_to theme_path(@theme.id), class: "main__background__formats__btns--return" do
+            戻る

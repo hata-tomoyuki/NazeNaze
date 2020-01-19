@@ -1,0 +1,31 @@
+.header
+  = render "themes/header"
+  .header__menu
+    - if user_signed_in?
+      .header__menu__btn
+        = current_user.nickname
+      .header__menu__btn
+        = link_to destroy_user_session_path, class: "header__menu__btn--link", method: :delete do
+          ログアウト
+    - else
+      .header__menu__btn
+        = link_to new_user_session_path, class: "header__menu__btn--link" do
+          ログイン
+      .header__menu__btn
+        = link_to new_user_registration_path, class: "header__menu__btn--link" do
+          新規登録
+
+.main
+  .main__background
+    .main__background__formats
+      .main__background__formats__title
+        = @theme.title
+      %p まとめの作成
+
+    .create_form
+      = form_for [@theme, @summary] do |f|
+        .create_form__field
+          = f.text_area :text, class: 'summary', placeholder: ' Write summary'
+        = f.submit '完了', class: 'create_button'
+        = link_to "/themes/#{@theme.id}/summaries/#{@theme.id}", class: "return_btn" do
+          戻る

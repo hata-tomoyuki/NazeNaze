@@ -17,8 +17,9 @@
 
 .main
   .main__background
-    .main__background__char
-      = @theme.title
+    .main__background__upper
+      .main__background__upper__char
+        = @theme.title
     - @posts.each do |post|
       .main__background__post
         .main__background__post__left_content
@@ -29,9 +30,14 @@
             = post.created_at.to_s(:datetime)
           = link_to theme_post_path(post.id), class: "main__background__post__right_content__icon", method: :delete do
             %i.fas.fa-trash
+          
 
+    
   .form
     = form_for [@theme, @post] do |f|
       .form__theme
         = f.text_field :text, class: 'text', placeholder: ' Post idea'
         = f.submit 'Go', class: 'button'
+        .form__theme__summary
+          = link_to theme_summary_path(@theme.id), class: "form__theme__summary--link" do
+            Summery
