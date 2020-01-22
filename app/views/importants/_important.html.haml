@@ -1,0 +1,27 @@
+.main__background__post__left_content
+  %p.title
+    = post.text
+.main__background__post__right_content
+  %p.date
+    = post.created_at.to_s(:datetime)
+  - if post.important
+    = link_to post_important_destroy_path(post.id), class: "main__background__post__right_content__icon", method: :delete, remote: true do
+      %i.far.fa-star
+    = link_to theme_post_path(post.id), class: "main__background__post__right_content__icon", method: :delete do
+      %i.fas.fa-trash
+  - else
+    = link_to post_important_path(post.id), class: "main__background__post__right_content__icon", remote: true do
+      %i.fas.fa-star
+    = link_to theme_post_path(post.id), class: "main__background__post__right_content__icon", method: :delete do
+      %i.fas.fa-trash
+
+  -# .main__background__post__left_content
+  -#   %p.title
+  -#     = post.text
+  -# .main__background__post__right_content
+  -#   %p.date
+  -#     = post.created_at.to_s(:datetime)
+  -#   = link_to post_important_path(post.id), class: "main__background__post__right_content__icon", remote: true do
+  -#     %i.fas.fa-star
+  -#   = link_to theme_post_path(post.id), class: "main__background__post__right_content__icon", method: :delete do
+  -#     %i.fas.fa-trash-alt

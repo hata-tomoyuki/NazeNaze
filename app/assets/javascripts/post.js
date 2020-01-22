@@ -10,8 +10,10 @@ $(function() {
                     <p class="date">
                      ${post.date}
                     </p>
+                    <a class="main__background__post__right_content__icon" rel="nofollow" >
+                      <i class="fas fa-star"></i>
                     <a class="main__background__post__right_content__icon" rel="nofollow" data-method="delete" href="/themes/${post.id}/posts/${post.theme_id}">
-                      <i class="fas fa-trash"></i>
+                      <i class="fas fa-trash-alt"></i>
                     </a>
                     </div>
                   </div>
