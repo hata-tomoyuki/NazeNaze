@@ -20,16 +20,32 @@
     .main__background__upper
       .main__background__upper__char
         = @theme.title
+      
     - @posts.each do |post|
-      .main__background__post
-        .main__background__post__left_content
-          %p.title
-            = post.text
-        .main__background__post__right_content
-          %p.date
-            = post.created_at.to_s(:datetime)
-          = link_to theme_post_path(post.id), class: "main__background__post__right_content__icon", method: :delete do
-            %i.fas.fa-trash
+      - if post.important
+        .main__background__post_important
+          .main__background__post__left_content
+            %p.title
+              = post.text
+          .main__background__post__right_content
+            %p.date
+              = post.created_at.to_s(:datetime)
+            = link_to post_important_destroy_path(post.id), class: "main__background__post__right_content__icon", method: :delete do
+              %i.fas.fa-star
+            = link_to theme_post_path(post.id), class: "main__background__post__right_content__icon", method: :delete do
+              %i.fas.fa-trash
+      - else
+        .main__background__post
+          .main__background__post__left_content
+            %p.title
+              = post.text
+          .main__background__post__right_content
+            %p.date
+              = post.created_at.to_s(:datetime)
+            = link_to post_important_path(post.id), class: "main__background__post__right_content__icon" do
+              %i.far.fa-star
+            = link_to theme_post_path(post.id), class: "main__background__post__right_content__icon", method: :delete do
+              %i.fas.fa-trash-alt
           
 
     

@@ -21,7 +21,7 @@
       テーマ一覧
       - @themes.each do |theme|
         - if user_signed_in? && current_user.id == theme.user_id
-          -if theme.summary
+          - if theme.summary
             .main__background__theme__summary_exist
               .main__background__theme__left_content
                 = link_to edit_theme_path(theme.id), class: "main__background__theme__left_content--title" do
