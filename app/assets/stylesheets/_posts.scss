@@ -51,20 +51,23 @@
           color: #444;
           text-decoration: none;
         }
+        .fas.fa-star{
+          color: #c00;
+        }
       }
     }
-    // &__post_important{
-    //   width: 70%;
-    //   border: 1px solid #333;
-    //   margin: 30px auto 50px;
-    //   padding-bottom: 20px;
-    //   padding-top: 20px;
-    //   border-radius: 10px;
-    //   color: #333;
-    //   background-color: #b1f9d0;
-    //   display: flex;
-    //   justify-content: space-between;
-    // }
+    &__post_important{
+      width: 70%;
+      border: 1px solid #c00;
+      margin: 30px auto 50px;
+      padding-bottom: 20px;
+      padding-top: 20px;
+      border-radius: 10px;
+      color: #333;
+      background-color: #fef;
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }
 .form{
