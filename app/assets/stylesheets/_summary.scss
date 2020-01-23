@@ -2,12 +2,12 @@
   background-color: #ddd;
   height: calc(100vh - 100px);
   width: 100vw;
-  overflow: scroll;
+  // overflow: scroll;
   &__background{
     background-color: #eee;
     height: 100vh;
     margin: 0 70px;
-    overflow: scroll;
+    // overflow: scroll;
     padding-bottom: 100px;  
     &__formats{
       text-align: center;
@@ -49,6 +49,7 @@
         padding: 10px;
         background-color: #fff;
         height: 60%;
+        font-size: 28px;
       }
       &__message{
         text-align: center;

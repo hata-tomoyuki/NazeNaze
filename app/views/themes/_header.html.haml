@@ -1,3 +1,17 @@
 .header__title
   = link_to root_path, class: "header__title--btn" do
-    ??NazeNaze??
+    MEMOMA
+.header__menu
+  - if user_signed_in?
+    .header__menu__btn
+      = current_user.nickname
+    .header__menu__btn
+      = link_to destroy_user_session_path, class: "header__menu__btn--link", method: :delete do
+        ログアウト
+  - else
+    .header__menu__btn
+      = link_to new_user_session_path, class: "header__menu__btn--link" do
+        ログイン
+    .header__menu__btn
+      = link_to new_user_registration_path, class: "header__menu__btn--link" do
+        新規登録
