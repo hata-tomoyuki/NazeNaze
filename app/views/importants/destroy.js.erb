@@ -1,1 +1,3 @@
 $("#important_btn<%= @post.id %>").html('<%= escape_javascript(render("important", post: @post  )) %>');
+$("#main__background__post<%= @post.id %>").removeClass('red');
+$("#main__background__post_important<%= @post.id %>").addClass('white');

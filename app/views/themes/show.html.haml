@@ -8,17 +8,28 @@
         = @theme.title
       
     - @posts.each do |post|
-      .main__background__post
-        .main__background__post__left_content
-          %p.title
-            = post.text
-        .main__background__post__right_content
-          %p.date
-            = post.created_at.to_s(:datetime)
-          -# #important-btn{ id: "#{post.id}" }
-          = render partial: 'importants/important', locals: { post: post}
-          = link_to theme_post_path(post.id), class: "main__background__post__right_content__icon", method: :delete do
-            %i.fas.fa-trash
+      - if post.important
+        .main__background__post_important{ id: "main__background__post_important#{post.id}" }
+          .main__background__post__left_content
+            %p.title
+              = post.text
+          .main__background__post__right_content
+            %p.date
+              = post.created_at.to_s(:datetime)
+            = render partial: 'importants/important', locals: { post: post}
+            = link_to theme_post_path(post.id), class: "main__background__post__right_content__icon", method: :delete do
+              %i.fas.fa-trash
+      - else
+        .main__background__post{ id: "main__background__post#{post.id}" }
+          .main__background__post__left_content
+            %p.title
+              = post.text
+          .main__background__post__right_content
+            %p.date
+              = post.created_at.to_s(:datetime)
+            = render partial: 'importants/important', locals: { post: post}
+            = link_to theme_post_path(post.id), class: "main__background__post__right_content__icon", method: :delete do
+              %i.fas.fa-trash
 
     
   .form
