@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     @theme = Theme.find(params[:theme_id])
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to "/themes/#{@theme.id}"
+    # redirect_to "/themes/#{@theme.id}"
   end
 
   private
