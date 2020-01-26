@@ -47,7 +47,6 @@
         }
         &__icon{
           font-size: 20px;
-          margin: 10px 5px 0 0;
           color: #444;
           text-decoration: none;
         }
@@ -110,3 +109,13 @@
     }
   }
 }
+
+.red{
+  border: 1px solid #c00;
+  background-color: #fef;
+  }
+
+.white{
+  border: 1px solid #333;
+  background-color: #fff;
+  }
