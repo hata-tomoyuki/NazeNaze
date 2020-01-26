@@ -1,6 +1,6 @@
 $(function() {
   function buildHTML(post){
-    var html = `<div class="main__background__post">
+    var html = `<div class="main__background__post", id="main__background__post${post.id}">
                   <div class="main__background__post__left_content">
                     <p class="title">
                       ${post.text}
