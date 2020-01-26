@@ -15,8 +15,8 @@ class PostsController < ApplicationController
 
   def destroy
     @theme = Theme.find(params[:theme_id])
-    post = Post.find(params[:id])
-    post.destroy
+    @post = Post.find(params[:id])
+    @post.destroy
     redirect_to "/themes/#{@theme.id}"
   end
 
