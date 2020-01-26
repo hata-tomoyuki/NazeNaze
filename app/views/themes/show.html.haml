@@ -18,7 +18,7 @@
               = post.created_at.to_s(:datetime)
             = render partial: 'importants/important', locals: { post: post}
             = link_to theme_post_path(post.id), class: "main__background__post__right_content__icon", method: :delete do
-              %i.fas.fa-trash
+              %i.fas.fa-trash-alt
       - else
         .main__background__post{ id: "main__background__post#{post.id}" }
           .main__background__post__left_content
@@ -29,7 +29,7 @@
               = post.created_at.to_s(:datetime)
             = render partial: 'importants/important', locals: { post: post}
             = link_to theme_post_path(post.id), class: "main__background__post__right_content__icon", method: :delete do
-              %i.fas.fa-trash
+              %i.fas.fa-trash-alt
 
     
   .form
