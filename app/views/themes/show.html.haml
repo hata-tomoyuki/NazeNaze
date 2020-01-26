@@ -13,23 +13,17 @@
           .main__background__post__left_content
             %p.title
               = post.text
-          .main__background__post__right_content
-            %p.date
-              = post.created_at.to_s(:datetime)
+          .main__background__post__right_content{ id: "main__background__post__right_content#{post.id}" }
             = render partial: 'importants/important', locals: { post: post}
-            = link_to theme_post_path(post.id), class: "main__background__post__right_content__icon", method: :delete do
-              %i.fas.fa-trash-alt
+            
       - else
         .main__background__post{ id: "main__background__post#{post.id}" }
           .main__background__post__left_content
             %p.title
               = post.text
-          .main__background__post__right_content
-            %p.date
-              = post.created_at.to_s(:datetime)
+          .main__background__post__right_content{ id: "main__background__post__right_content#{post.id}" }
             = render partial: 'importants/important', locals: { post: post}
-            = link_to theme_post_path(post.id), class: "main__background__post__right_content__icon", method: :delete do
-              %i.fas.fa-trash-alt
+            
 
     
   .form

@@ -6,14 +6,14 @@ $(function() {
                       ${post.text}
                     </p>
                   </div>
-                  <div class="main__background__post__right_content">
+                  <div class="main__background__post__right_content", id="main__background__post__right_content${post.id}">
                     <p class="date">
                      ${post.date}
                     </p>
-                    <a id="important_btn${post.id}" class="main__background__post__right_content__icon" data-remote="true" rel="nofollow" href="/themes/${post.id}/importants">
+                    <a class="main__background__post__right_content__icon" data-remote="true" rel="nofollow" href="/themes/${post.id}/importants">
                       <i class="far fa-star"></i>
                     </a>
-                    <a class="main__background__post__right_content__icon" rel="nofollow" data-method="delete" href="/themes/${post.id}/posts/${post.theme_id}">
+                    <a class="main__background__post__right_content__icon" data-remote="true" rel="nofollow" data-method="delete" href="/themes/${post.theme_id}/posts/${post.id}">
                       <i class="fas fa-trash-alt"></i>
                     </a>
                     </div>
@@ -40,6 +40,13 @@ $(function() {
       $('.main__background').animate({ scrollTop: $('.main__background')[0].scrollHeight});
       $('#post_text').val('');
       $('input').prop('disabled', false);
+      $(document).on("click", ".fas.fa-trash", function() {
+        if(confirm('本当に削除しますか？')) {
+          return true;
+        } else {
+          return false;
+        }
+      })
     })
     .fail(function(){
       alert('メッセージを入力してください');

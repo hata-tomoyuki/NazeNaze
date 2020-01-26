@@ -1,3 +1,10 @@
-$("#important_btn<%= @post.id %>").html('<%= escape_javascript(render("important", post: @post  )) %>');
+$("#main__background__post__right_content<%= @post.id %>").html('<%= escape_javascript(render("important", post: @post  )) %>');
 $("#main__background__post<%= @post.id %>").addClass('red');
 $("#main__background__post_important<%= @post.id %>").removeClass('white');
+$(".fas.fa-trash").click(function() {
+  if(confirm('本当に削除しますか？')) {
+    return true;
+  } else {
+    return false;
+  }
+})
