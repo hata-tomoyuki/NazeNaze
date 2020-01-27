@@ -1,58 +1,20 @@
-* {
-  box-sizing: border-box;
-}
-
-
-
-.header{
-  width: 100vw;
-  height: 100px;
-  background-color: #444;
-  display: flex;
-  justify-content: space-between;
-  &__title{
-    font-weight: bold;
-    font-size: 34px;
-    text-align: center;
-    line-height: 100px;
-    margin-left: 15px;
-    font-family: cursive;
-    &--btn{
-      text-decoration: none;
-      color: #ff8;
-    }
-  }
-  &__menu{
-    display: flex;
-    justify-content: flex-end;
-    &__btn{
-      border-radius: 4px;
-      height: 40px;
-      margin: auto 10px;
-      background-color: #ffe;
-      padding: 8px 10px 0;
-      &--link{
-        text-decoration: none;
-        color: black;
-        display: block;
-      }
-    }
-  }
-}
-
 .main{
   background-color: #ddd;
-  height: calc(100vh - 80px);
+  // height: calc(100vh - 80px);
   width: 100vw;
-  // overflow: scroll;
+  // overflow-y: scroll;
   overflow:hidden;
+  // padding-top: 200px;
+  // padding-bottom: 100px;
   &__background{
     background-color: #eee;
     height: 100vh;
     margin: 0 70px;
-    // overflow: scroll;
-    overflow:hidden;
-    padding-bottom: 100px;  
+    overflow-y: scroll;
+    // overflow:hidden;
+    // overflow-y: scroll;
+    padding-bottom: 80px;
+    padding-top: 100px;
     &__char{
       padding: 20px 0 0 20px;
       font-size: 24px;
@@ -128,19 +90,24 @@
       }
     }
   }
+}
+.footer{
+  background-color: #444;
+  position: fixed;
+  bottom: 0;
+  height: 80px;
+  width: 100%;
   .form{
     width: 100%;
     padding: 0 70px;
-    background-color: #444;
-    position: fixed;
-    bottom: 0;
     margin: auto;
-    height: 10%;
+    // height: 200px;
+    position: relative;
     &__theme{
       display: flex;
       height: 50%;
-      padding-top: 20px;
-      position: relative;
+      padding-top: 15px;
+      // position: relative;
       width: 100%;
       .text{
       width: 100%;
@@ -161,7 +128,7 @@
     padding: 12px 12px;
     background-color: #ff8;
     line-height: 1em;
-    border: 2px solid #000066;
+    border: 2px solid #006;
     margin-bottom: 20px;
     margin-left: 20px
   }

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "/themes/:post_id/importants", to: 'importants#create', as: 'post_important'
   delete "/themes/:post_id/importants", to: 'importants#destroy', as: 'post_important_destroy'
 
+  resources :users, only: [:edit, :update]
+  
   resources :themes, only: [:index, :create, :show, :destroy, :edit, :update] do
     
     resources :posts, only: [:index, :create, :destroy] 

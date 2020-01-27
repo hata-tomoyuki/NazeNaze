@@ -1,9 +1,8 @@
 class PostsController < ApplicationController
 
-  # before_action :set_theme
+  before_action :set_theme
 
   def create
-    @theme = Theme.find(params[:theme_id])
     @post = Post.create(post_params)
     if @post.save
       respond_to do |format|
@@ -14,10 +13,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @theme = Theme.find(params[:theme_id])
     @post = Post.find(params[:id])
     @post.destroy
-    # redirect_to "/themes/#{@theme.id}"
   end
 
   private
@@ -25,8 +22,8 @@ class PostsController < ApplicationController
     params.require(:post).permit(:text).merge(theme_id: params[:theme_id], user_id: current_user.id)
   end
 
-  # def set_theme
-  #   @theme = Theme.find(params[:theme_id])
-  # end
+  def set_theme
+    @theme = Theme.find(params[:theme_id])
+  end
 
 end

@@ -4,7 +4,8 @@
 .header__menu
   - if user_signed_in?
     .header__menu__btn
-      = current_user.nickname
+      = link_to edit_user_path(current_user.id), class: "header__menu__btn--link" do
+        = current_user.nickname
     .header__menu__btn
       = link_to destroy_user_session_path, class: "header__menu__btn--link", method: :delete do
         ログアウト

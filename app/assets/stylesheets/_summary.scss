@@ -1,14 +1,14 @@
-.main{
+.main_fixed{
   background-color: #ddd;
   height: calc(100vh - 100px);
   width: 100vw;
-  // overflow: scroll;
+  overflow: hidden;
   &__background{
     background-color: #eee;
     height: 100vh;
     margin: 0 70px;
-    // overflow: scroll;
-    padding-bottom: 100px;  
+    overflow: hidden;
+    padding-bottom: 100px;   
     &__formats{
       text-align: center;
       &__title{
@@ -24,7 +24,6 @@
         &--btn{
           text-decoration: none;
           color: #333;
-          // margin: 0 40px;
           margin-right: 40px;
           border: 1px solid black;
           border-radius:5px;
@@ -34,8 +33,6 @@
         &--return{
           text-decoration: none;
           color: #333;
-          // margin: 0 40px;
-          margin-right: 40px;
           border: 1px solid black;
           border-radius:5px;
           padding: 10px 20px;
