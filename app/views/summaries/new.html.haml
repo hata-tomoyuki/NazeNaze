@@ -11,7 +11,7 @@
     .create_form
       = form_for [@theme, @summary] do |f|
         .create_form__field
-          = f.text_area :text, class: 'summary', placeholder: ' Write summary'
+          = f.text_area :text, class: 'summary', placeholder: 'Write summary'
         = f.submit '完了', class: 'create_button'
         = link_to "/themes/#{@theme.id}/summaries/#{@theme.id}", class: "return_btn" do
           戻る
