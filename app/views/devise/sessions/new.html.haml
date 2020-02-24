@@ -1,9 +1,9 @@
 .header
   = render "themes/header"
   
-.main_fixed
-  .main_fixed__background
-    .main_fixed__background__box
+.main
+  .main__background
+    .main__background__box
       %h2 Log in
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field

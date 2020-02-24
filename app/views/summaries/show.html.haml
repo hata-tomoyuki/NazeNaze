@@ -1,36 +1,36 @@
 .header
   = render "themes/header"
   
-.main_fixed
-  .main_fixed__background
-    .main_fixed__background__formats
-      .main_fixed__background__formats__title
+.main
+  .main__background
+    .main__background__formats
+      .main__background__formats__title
         = @theme.title
     - if @summary
-      .main_fixed__background__formats__summary
-        = @summary.text
-      .main_fixed__background__formats__btns
-        = link_to edit_theme_summary_path(@theme.id), class: "main_fixed__background__formats__btns--btn" do
+      .main__background__formats__summary
+        = simple_format(h(@summary.text))
+      .main__background__formats__btns
+        = link_to edit_theme_summary_path(@theme.id), class: "main__background__formats__btns--btn" do
           編集
-        = link_to theme_summary_path(@theme.id), class: "main_fixed__background__formats__btns--btn", method: :delete do
+        = link_to theme_summary_path(@theme.id), class: "main__background__formats__btns--btn", method: :delete do
           削除
-        = link_to theme_path(@theme.id), class: "main_fixed__background__formats__btns--return" do
+        = link_to theme_path(@theme.id), class: "main__background__formats__btns--return" do
           戻る
     - else
       - if @post.empty?
-        .main_fixed__background__formats__message
+        .main__background__formats__message
           メモの投稿がありません！
           %br/
           %br/
           メモを投稿しましょう！
-        .main_fixed__background__formats__btns
-          = link_to theme_path(@theme.id), class: "main_fixed__background__formats__btns--return" do
+        .main__background__formats__btns
+          = link_to theme_path(@theme.id), class: "main__background__formats__btns--return" do
             戻る
       - else
-        .main_fixed__background__formats__message
+        .main__background__formats__message
           メモをまとめて言語化しましょう！
-        .main_fixed__background__formats__btns
-          = link_to new_theme_summary_path(@theme.id), class: "main_fixed__background__formats__btns--btn" do
+        .main__background__formats__btns
+          = link_to new_theme_summary_path(@theme.id), class: "main__background__formats__btns--btn" do
             作成
-          = link_to theme_path(@theme.id), class: "main_fixed__background__formats__btns--return" do
+          = link_to theme_path(@theme.id), class: "main__background__formats__btns--return" do
             戻る

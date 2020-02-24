@@ -29,8 +29,12 @@
   .form
     = form_for [@theme, @post] do |f|
       .form__theme
-        = f.text_field :text, class: 'text', placeholder: 'Post idea'
-        = f.submit 'Go', class: 'button'
+        = f.text_field :text, class: 'text', placeholder: 'Enter Text'
+        = f.submit 'SEND', class: 'button'
         .form__theme__summary
           = link_to theme_summary_path(@theme.id), class: "form__theme__summary--link" do
-            Summery
+            まとめ
+        .form__theme__return
+          = link_to root_path, class: "form__theme__return--link" do
+            戻る
+        

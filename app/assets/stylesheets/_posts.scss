@@ -6,7 +6,7 @@
     height: 100vh;
     margin: 0 70px;
     overflow-y: scroll;
-    padding-bottom: 80px;
+    padding-bottom: 90px;
     padding-top: 100px;
     &__upper{
       color: #333;
@@ -50,7 +50,7 @@
     &__post_important{
       width: 70%;
       border: 1px solid #c00;
-      margin: 30px auto 50px;
+      margin: 30px auto 0;
       padding-bottom: 20px;
       padding-top: 20px;
       border-radius: 10px;
@@ -84,11 +84,13 @@
         width: 100px;
         border-radius: 5px;
         cursor: pointer;
-        padding: 14px 12px;
-        background-color: #ff97c2;
+        padding: 14px 0;
+        background-color: #fcf;
         line-height: 1em;
         border: 2px solid #006;
         margin-left: 20px;
+        font-size: 22px;
+        text-align: center;
         &--link{
           text-decoration: none;
           color: #333;
@@ -96,6 +98,23 @@
       }
       &__summary:hover {
         background: #fff;
+      }
+      &__return{
+        height: 50px;
+        width: 100px;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 14px 0;
+        background-color: #fff;
+        line-height: 1em;
+        border: 2px solid #006;
+        margin-left: 20px;
+        font-size: 22px;
+        text-align: center;
+        &--link{
+          text-decoration: none;
+          color: #333;
+        }
       }
     }
   }

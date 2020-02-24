@@ -1,15 +1,15 @@
 .header
   = render "themes/header"
   
-.main_fixed
-  .main_fixed__background
-    .main_fixed__background__formats
-      .main_fixed__background__formats__title
+.main
+  .main__background
+    .main__background__formats
+      .main__background__formats__title
         まとめの編集
     .create_form
       = form_for [@theme, @summary] do |f|
         .create_form__field
-          = f.text_area :text, class: 'summary', placeholder: ' Write summary'
+          = f.text_area :text, class: 'summary', placeholder: 'Enter Summary'
         = f.submit '完了', class: 'create_button'
         = link_to "/themes/#{@theme.id}/summaries/#{@theme.id}", class: "return_btn" do
           戻る

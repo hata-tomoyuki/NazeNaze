@@ -1,15 +1,17 @@
 .header
   = render "themes/header"
   
-.main_fixed
-  .main_fixed__background
-    .main_fixed__background__formats
-      .main_fixed__background__formats__title
+.main
+  .main__background
+    .main__background__formats
+      .main__background__formats__title
         = @theme.title
       %p タイトル名の変更
 
       .edit_form
         = form_for @theme do |f|
           .edit_form__field
-            = f.text_field :title, class: 'text', placeholder: ' Enter theme'
-          = f.submit 'Change', class: 'edit_button'
+            = f.text_field :title, class: 'text', placeholder: 'Enter theme'
+          = f.submit '変更', class: 'edit_button'
+          = link_to root_path, class: "return_btn" do
+            戻る

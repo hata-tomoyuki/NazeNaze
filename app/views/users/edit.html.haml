@@ -1,9 +1,9 @@
 .header
   = render "themes/header"
 
-.main_fixed
-  .main_fixed__background
-    .main_fixed__background__formats
+.main
+  .main__background
+    .main__background__formats
       %p アカウントの編集
     .user_edit_form
       = form_for(current_user) do |f|
@@ -18,4 +18,6 @@
           .user_edit_form__field--input
             = f.email_field :email, class: 'text'
         .actions
-          = f.submit "Update", class: 'user_edit_button'
+          = f.submit "変更", class: 'user_edit_button'
+          = link_to root_path, class: "return_btn" do
+            戻る

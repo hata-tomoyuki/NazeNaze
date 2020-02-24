@@ -6,7 +6,7 @@
     height: 100vh;
     margin: 0 70px;
     overflow-y: scroll;
-    padding-bottom: 80px;
+    padding-bottom: 90px;
     padding-top: 100px;
     &__char{
       padding: 20px 0 0 20px;
@@ -99,11 +99,12 @@
     width: 80px;
     border-radius: 5px;
     cursor: pointer;
-    padding: 12px 12px;
+    padding: 12px 5px;
     background-color: #ff8;
     line-height: 1em;
     border: 2px solid #006;
-    margin-left: 20px
+    margin-left: 20px;
+    font-size: 24px;
   }
   .button:hover {
     background: #fff;

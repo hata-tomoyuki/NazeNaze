@@ -13,7 +13,7 @@
               = link_to edit_theme_path(theme.id), class: "main__background__theme__left_content--title" do
                 = theme.title
               .main__background__theme__left_content--count
-                なぜなぜカウント：
+                MEMOカウント：
                 = theme.posts.length
             .main__background__theme__right_content
               %p.date
@@ -31,7 +31,7 @@
               = link_to edit_theme_path(theme.id), class: "main__background__theme__left_content--title" do
                 = theme.title
               .main__background__theme__left_content--count
-                なぜなぜカウント：
+                MEMOカウント：
                 = theme.posts.length
             .main__background__theme__right_content
               %p.date
@@ -47,8 +47,8 @@
   .form
     = form_for @theme do |f|
       .form__theme
-        = f.text_field :title, class: 'text', placeholder: 'Enter theme'
-        = f.submit 'Go', class: 'button'
+        = f.text_field :title, class: 'text', placeholder: 'Enter Title'
+        = f.submit 'SEND', class: 'button'
 
 
 

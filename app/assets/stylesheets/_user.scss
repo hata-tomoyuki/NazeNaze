@@ -1,14 +1,13 @@
-.main_fixed{
+.main{
   background-color: #ddd;
-  height: calc(100vh - 100px);
-  width: 100vw;
-  overflow: hidden;
+  overflow:hidden;
   &__background{
     background-color: #eee;
     height: 100vh;
     margin: 0 70px;
-    overflow: hidden;
-    padding-bottom: 100px;   
+    overflow-y: scroll;
+    padding-bottom: 90px;
+    padding-top: 100px;
     &__formats{
       text-align: center;
       p{
@@ -35,19 +34,37 @@
         font-size: 24px;
       }
     }
-    .user_edit_button{
-      height: 50px;
-      border-radius: 5px;
-      text-align: center;
-      cursor: pointer;
-      padding: 12px 12px;
-      background-color: #ff8;
-      line-height: 1em;
-      border: 2px solid #000066;
-      margin-top: 20px
-    }
-    .button:hover {
-      background: #fff;
+    .actions{
+      padding-top: 30px;
+      .user_edit_button{
+        height: 50px;
+        width: 100px;
+        font-size: 20px;
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+        padding: 12px 12px;
+        background-color: #ff8;
+        line-height: 1em;
+        border: 2px solid #006;
+      }
+      .button:hover {
+        background: #fff;
+      }
+      .return_btn{
+        height: 50px;
+        font-size: 20px;
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+        padding: 13px 26px;
+        background-color: #fff;
+        line-height: 1em;
+        border: 2px solid #006;
+        margin-left: 20px;
+        text-decoration: none;
+        color: #000;
+      }
     }
   }
 }
