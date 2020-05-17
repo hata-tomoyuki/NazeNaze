@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
 
-# NazeNaze DB設計
+# MEMOMA DB設計
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
