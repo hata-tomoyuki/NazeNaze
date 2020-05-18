@@ -19,7 +19,7 @@
               %p.date
                 = theme.created_at.to_s(:datetime)
               .main__background__theme__right_content__summary_exist_icons
-                = link_to theme_path(theme.id), class: "main__background__theme__right_content__icons--icon" do
+                = link_to edit_theme_path(theme.id), class: "main__background__theme__right_content__icons--icon" do
                   %i.fas.fa-edit
                 = link_to theme_path(theme.id), class: "main__background__theme__right_content__icons--icon", method: :delete do
                   %i.fas.fa-trash 
