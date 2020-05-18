@@ -23,42 +23,52 @@ Things you may want to cover:
 
 * ...
 
-# MEMOMA DB設計
+# MEMOMA DB
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |email|sting|null: false|
 |password|string|null: false|
-|username|string|null: false|
+|nickname|string|null: false|
 ### Association
-- has_many :messages
+- has_many :themes
+- has_many :posts
+- has_many :summaries
+- has_many :importants
+
+## themesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|title|text||
+### Association
+- belongs_to :user
+- has_many :posts
+- has_one :summary
 
 ## postsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text||
-|image|text||
-|user_id|integer|null: false, foreign_key: true|
-|tag_id|integer|null: false, foreign_key: true|
+|theme_id|integer||
+### Association
+- belongs_to :theme
+- belongs_to :user
+- has_one :important
+
+# summariesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text||
+|theme_id|integer||
+|user_id|integer||
 ### Association
 - belongs_to :user
-- has_many :posts_tags
-- has_many :tags,  through:  :posts_tags
+- belongs_to :theme
 
-## tagsテーブル
+# importantsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|tagname|sting|null: false|
+|post_id|integer||
 ### Association
-- has_many :posts
-- has_many :posts_tags
-- has_many :posts,  through:  :posts_tags
-
-# posts_tagsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|post_id|integer|null: false, foreign_key: true|
-|tag_id|integer|null: false, foreign_key: true|
-### Association
+- belongs_to :user
 - belongs_to :post
-- belongs_to :tag
